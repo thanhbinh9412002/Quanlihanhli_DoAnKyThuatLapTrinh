@@ -155,17 +155,17 @@ void InThongTin(item it) {
 void themItem(item it[]) // Them du lieu hoan toan moi
 {
     int n = so_luong_item_hientai;
-    cout << "Nhap them san pham: " << endl;
+    cout << "\n\t\tNhap them san pham: " << endl;
     rewind(stdin);
-    cout << "Nhap ten san pham can them :";
+    cout << "\n\t\tNhap ten san pham can them :";
     getline(cin, it[n].name);
-    cout << "Nhap gia thanh: ";
+    cout << "\n\t\tNhap gia thanh: ";
     cin >> it[n].price;
-    cout << "Nhap can nang: ";
+    cout << "\n\t\tNhap can nang: ";
     cin >> it[n].weight;
-    cout << "Nhap chieu cao: ";
+    cout << "\n\t\tNhap chieu cao: ";
     cin >> it[n].height;
-    cout << "Nhap chieu rong: ";
+    cout << "\n\t\tNhap chieu rong: ";
     cin >> it[n].width;
     so_luong_item_hientai++;
 }
@@ -212,7 +212,7 @@ void suaItem(item it[]) // Tim kiem vat dung theo ten, sau do thuc hien chinh su
         }
     }
     if (found == 0) {
-        cout << "Khong tim thay san pham trong danh sach!" << endl;
+        cout << "\n\t\tKhong tim thay san pham trong danh sach!" << endl;
     }
 }
 
@@ -228,7 +228,7 @@ void xoaItem(item it[]) // Tim kiem vat dung, sau do xoa vat dung
 {
     string x;
     int n = so_luong_item_hientai;
-    cout << "\n\tNhap ten san pham can xoa: ";
+    cout << "\n\t\tNhap ten san pham can xoa: ";
     rewind(stdin);
     getline(cin, x);
     int found = 0;
@@ -242,11 +242,11 @@ void xoaItem(item it[]) // Tim kiem vat dung, sau do xoa vat dung
     }
     if (found == 0)
     {
-        cout << "\n\n\t Vat dung khong co !";
+        cout << "\n\t\t Vat dung khong co !";
     }
     else
     {
-        cout << "\n Da xoa vat dung co ten la: " << x;
+        cout << "\n\t\t Da xoa vat dung co ten la: " << x;
         so_luong_item_hientai--;
     }
 }
@@ -893,7 +893,7 @@ void Del(item it[])							// Menu cua ham xoa vật dụng trong chương trình
                         ClearScreen();
                         SetColor(15);
                         xoaItem(it);
-                        cout << "\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
+                        cout << "\n\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
                         rewind(stdin);
                         char t = _getch();
                         if (t == 32)
@@ -981,6 +981,7 @@ void Edit(item it[])							//Menu cua ham chinh sua các vật dụng trong chư
                         ClearScreen();
                         SetColor(15);
                         suaItem(it);
+                        cout << "\n\n\t\t\t\t\t    DA SUA THANH CONG !";
                         cout << "\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
                         rewind(stdin);
                         char t = _getch();
@@ -1071,7 +1072,7 @@ void Search(item it[])						//Menu cua ham tim kiem các vật dụng trong chư
                     {
                         ClearScreen();
                         SetColor(15);
-                        cout << "\n\t\tNhap ten vat dung ban can tim: ";
+                        cout << "\n\t\tNhap ten vat dung ban can tim:  ";
                         rewind(stdin);
                         getline(cin, p);
                         if (!TimKiemTen(it, n, p))
@@ -1091,7 +1092,7 @@ void Search(item it[])						//Menu cua ham tim kiem các vật dụng trong chư
                         SetColor(15);
                         rewind(stdin);
                         ClearScreen();
-                        cout << "\n\t\tNhap gia can tim kiem: ";
+                        cout << "\n\t\tNhap gia can tim kiem:  ";
                         cin >> t;
                         if (!TimKiemGia(it, n, t))
                             cout << "\n\t\tKhong co vat dung co gia nay!\n";
@@ -1124,6 +1125,7 @@ void Search(item it[])						//Menu cua ham tim kiem các vật dụng trong chư
                     case 3:
                     {
                         ClearScreen();
+                        SetColor(15);
                         cout << "\n\t\tNhap chieu dai can tim kiem: ";
                         cin >> t;
                         if (!TimKiemChieuDai(it, n, t))
@@ -1140,6 +1142,7 @@ void Search(item it[])						//Menu cua ham tim kiem các vật dụng trong chư
                     case 4:
                     {
                         ClearScreen();
+                        SetColor(15);
                         cout << "\n\t\tNhap chieu rong can tim kiem: ";
                         cin >> t;
                         if (!TimKiemChieuRong(it, n, t))
@@ -1232,7 +1235,7 @@ void Sort(item it[])							//Menu cua ham sắp xếp các vật trong trong dan
                         SetColor(15);
                         sapXepTen(it);
                         LietKeItem(it, so_luong_item_hientai);
-                        cout << "\n\t\t\t\t\t     DA SAP XEP THAH CONG!       ";
+                        cout << "\n\t\t\t\t\t     DA SAP XEP THANH CONG!       ";
                         cout << "\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
                         rewind(stdin);
                         char t = _getch();
@@ -1246,9 +1249,10 @@ void Sort(item it[])							//Menu cua ham sắp xếp các vật trong trong dan
                     case 1:
                     {
                         ClearScreen();
+                        SetColor(15);
                         sapXepGia(it);
                         LietKeItem(it, so_luong_item_hientai);
-                        cout << "\n\t\t\t\t\t     DA SAP XEP THAH CONG!       ";
+                        cout << "\n\t\t\t\t\t     DA SAP XEP THANH CONG!       ";
                         cout << "\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
                         rewind(stdin);
                         char t = _getch();
@@ -1262,9 +1266,10 @@ void Sort(item it[])							//Menu cua ham sắp xếp các vật trong trong dan
                     case 2:
                     {
                         ClearScreen();
+                        SetColor(15);
                         sapXepCanNang(it);
                         LietKeItem(it, so_luong_item_hientai);
-                        cout << "\n\t\t\t\t\t     DA SAP XEP THAH CONG!       ";
+                        cout << "\n\t\t\t\t\t     DA SAP XEP THANH CONG!       ";
                         cout << "\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
                         rewind(stdin);
                         char t = _getch();
@@ -1354,7 +1359,7 @@ void Suggest(item it[])                     //Menu chứa hàm gợi ý các v�
                         SetColor(15);
                         NhapKhongGian(canNang);
                         GeneticFunction();
-                        cout << "\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
+                        cout << "\n\n\t\t\t\t\tNHAN PHIM << SPACE >> DE TRO VE !";
                         rewind(stdin);
                         char t = _getch();
                         if (t == 32)
